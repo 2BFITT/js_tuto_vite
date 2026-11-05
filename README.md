@@ -1,14 +1,6 @@
-# js_tuto_vite
+# JS Atelier
 
-Its the js tutorial rewritten with itcss, Bem, Vite, Mobile first, Ux und UI
-
-nextpropmt : und nun füge alle tutorials und funktinoen von dem : https://github.com/2BFITT/jstutorial hinzu
-
-
-
-
-
-Eine mobile-first Lernseite rund um JavaScript. Die Oberfläche verbindet kurze Lernpfade mit einer kleinen, direkt bedienbaren JavaScript-Spielwiese.
+Eine responsive, mobile-first Lernseite rund um JavaScript. Die Oberfläche verbindet einen zehnteiligen Lernpfad mit direkt bedienbaren Demos und kleinen Browserprojekten.
 
 Unter `tutorials.html` gibt es zusätzlich einen vollständigen Lernpfad mit zehn Modulen: Einführung/Ausgabe, Variablen und Datentypen, Operatoren, Bedingungen, Schleifen, Arrays, Funktionen, Objekte, DOM-Manipulation sowie Ereignisse und Timing. Jedes Modul enthält Erklärungen, Beispielcode, eine sichere interaktive Demo, eine Wissensfrage und eine Übung. Fortschritt und die drei Capstone-Projekte (Aufgabenliste, Notenübersicht und Quiz) werden lokal im Browser verarbeitet; der Kursfortschritt lässt sich zurücksetzen. Die zugehörigen Originalkapitel, Aufgaben, Arbeitsblätter und Zusatzthemen sind von dort direkt verlinkt.
 
@@ -58,6 +50,14 @@ npm run preview
 
 Öffne danach die vom Preview-Server angezeigte Adresse – normalerweise [http://localhost:4173](http://localhost:4173). Der Build liegt im Ordner `dist/`.
 
+### Kursdaten prüfen
+
+Die zehn Tutorialmodule haben einen kleinen Test ohne zusätzliche Abhängigkeiten:
+
+```sh
+npm test
+```
+
 ## Auf GitHub Pages veröffentlichen
 
 Ja: Sobald das Projekt auf GitHub liegt, kann GitHub Pages die Seite für dich bauen und veröffentlichen. Dafür:
@@ -81,9 +81,19 @@ src/
 
     main.js
 
-    tutorials.js     # Kursnavigation, Demos, Fortschritt und Projekte
+    tutorials.js          # Kursnavigation und Lernfortschritt
 
-    tutorial-data.js # Inhalte der zehn Module
+    tutorial-data.js      # Inhalte der zehn Module
+
+    course/
+
+        dom.js             # gemeinsame DOM-Hilfsfunktion
+
+        render-lesson.js   # Lektionen, Übungen und Quellenlinks
+
+        demos.js           # isolierte Demo-Zustände und Aktionen
+
+        projects.js        # Aufgabenliste, Notenverwaltung und Quiz
 
     styles/
 
@@ -102,4 +112,8 @@ src/
         course.css     # Kursmodule und interaktive Projekte
 
         utilities.css  # Hilfsklassen
+
+tests/
+
+    tutorial-data.test.js # Vollständigkeit und Reihenfolge der Module
 ```

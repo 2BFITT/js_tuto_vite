@@ -206,6 +206,12 @@
   line-height: 0.99;
 }
 
+@media (min-width: 720px) {
+  .hero h1 {
+    font-size: clamp(2.35rem, 3.65vw, 3.25rem);
+  }
+}
+
 .hero__highlight {
   color: #818d6d;
 }
