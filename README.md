@@ -8,6 +8,8 @@ Its the js tutorial rewritten with itcss, Bem, Vite, Mobile first, Ux und UI
 
 Eine mobile-first Lernseite rund um JavaScript. Die Oberfläche verbindet kurze Lernpfade mit einer kleinen, direkt bedienbaren JavaScript-Spielwiese.
 
+Unter `tutorials.html` gibt es zusätzlich einen vollständigen Lernpfad mit zehn Modulen: Einführung/Ausgabe, Variablen und Datentypen, Operatoren, Bedingungen, Schleifen, Arrays, Funktionen, Objekte, DOM-Manipulation sowie Ereignisse und Timing. Jedes Modul enthält Erklärungen, Beispielcode, eine sichere interaktive Demo, eine Wissensfrage und eine Übung. Fortschritt und die drei Capstone-Projekte (Aufgabenliste, Notenübersicht und Quiz) werden lokal im Browser verarbeitet; der Kursfortschritt lässt sich zurücksetzen. Die zugehörigen Originalkapitel, Aufgaben, Arbeitsblätter und Zusatzthemen sind von dort direkt verlinkt.
+
 ## Lokal auf dem eigenen Rechner starten
 
 Du brauchst [Node.js](https://nodejs.org/) (am besten die aktuelle LTS-Version). Öffne den Projektordner in VS Code und dann **Terminal → Neues Terminal**.
@@ -77,6 +79,10 @@ src/
 
     main.js
 
+    tutorials.js     # Kursnavigation, Demos, Fortschritt und Projekte
+
+    tutorial-data.js # Inhalte der zehn Module
+
     styles/
 
         settings.css   # Design-Tokens
@@ -90,6 +96,8 @@ src/
         objects.css    # Layout-Primitives
 
         components.css # BEM-Komponenten, mobile-first
+
+        course.css     # Kursmodule und interaktive Projekte
 
         utilities.css  # Hilfsklassen
 ```

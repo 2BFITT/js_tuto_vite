@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="description" content="Zehn interaktive JavaScript-Module mit Beispielen, Übungen und Projekten – kostenlos und auf Deutsch." />
+    <title>Alle Tutorials — JS Atelier</title>
+    <script type="module" crossorigin src="./assets/tutorials-CPVIOxTK.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-DttRe_Ry.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-DHw_95SD.css">
+    <link rel="stylesheet" crossorigin href="./assets/tutorials-Dd_uXNtB.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="./index.html#start" aria-label="JS Atelier Startseite">
+          <span class="brand__mark" aria-hidden="true">&lt;JS&gt;</span>
+          <span class="brand__name">js<span>atelier</span></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
+        <nav class="site-nav" id="primary-nav" aria-label="Hauptnavigation">
+          <a class="site-nav__link" href="./index.html#lernen">Startseite</a>
+          <a class="site-nav__link" href="#module">Module</a>
+          <a class="site-nav__link" href="#projekte">Projekte</a>
+          <a class="button button--small button--dark site-nav__cta" href="#module">Lernen <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="course-page">
+      <section class="course-hero">
+        <div class="container course-hero__inner">
+          <p class="eyebrow"><span class="eyebrow__line"></span> DEIN JAVASCRIPT-KURS</p>
+          <h1>Von der ersten Zeile<br />bis zum <span class="hero__highlight">eigenen Projekt.</span></h1>
+          <p>10 Module führen dich von Ausgaben und Datentypen bis zu DOM, Events und Timing. Jedes Kapitel enthält eine Erklärung, einen sicheren Live-Versuch, eine Wissensfrage und eine Übung.</p>
+          <a class="button button--primary" href="#module">Kurs entdecken <span aria-hidden="true">↓</span></a>
+          <div class="course-progress" aria-label="Kursfortschritt">
+            <div class="course-progress__top"><strong>Dein Fortschritt</strong><span id="progress-label">0 von 10 Modulen</span></div>
+            <progress id="course-progress" max="10" value="0">0 von 10</progress>
+            <p>Der Fortschritt wird nur in diesem Browser gespeichert.</p>
+            <button class="course-progress__reset" id="reset-progress" type="button">Fortschritt zurücksetzen</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="course-catalog section" id="module">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow"><span class="eyebrow__line"></span> DER LERNPFAD</p><h2>Wähle dein nächstes<br /><span class="heading-accent">Aha-Erlebnis.</span></h2></div>
+            <p class="section-heading__aside">Arbeite die Module der Reihe nach durch oder springe direkt zu einem Thema.</p>
+          </div>
+          <div class="course-tools">
+            <label class="course-search"><span>Modul suchen</span><input id="module-search" type="search" placeholder="z. B. Arrays oder Events" autocomplete="off" /></label>
+            <p id="module-count" aria-live="polite">10 Module</p>
+          </div>
+          <div class="module-grid" id="module-grid" aria-label="JavaScript-Module"></div>
+          <p class="course-empty" id="course-empty" hidden>Kein Modul passt zu deiner Suche. Probiere einen anderen Begriff.</p>
+        </div>
+      </section>
+
+      <section class="lesson-view section" id="lektion" aria-labelledby="lesson-title">
+        <div class="container lesson-view__container">
+          <div class="lesson-view__header">
+            <div><p class="eyebrow"><span class="eyebrow__line"></span> AUSGEWÄHLTES MODUL</p><p class="lesson-view__step" id="lesson-step">Wähle ein Modul aus dem Lernpfad</p></div>
+            <button class="lesson-complete" id="complete-lesson" type="button" disabled>Modul abschließen <span aria-hidden="true">✓</span></button>
+          </div>
+          <div id="lesson-content" class="lesson-content" aria-live="polite">
+            <div class="lesson-placeholder"><span aria-hidden="true">✳</span><h2 id="lesson-title">Dein Kurs beginnt hier.</h2><p>Wähle oben ein Modul. Du erhältst verständliche Kernideen, Beispielcode, eine direkt bedienbare Demo und eine kleine Aufgabe.</p></div>
+          </div>
+          <nav class="lesson-pagination" aria-label="Modulnavigation">
+            <button type="button" id="previous-lesson" disabled>← Vorheriges Modul</button>
+            <button type="button" id="next-lesson" disabled>Nächstes Modul →</button>
+          </nav>
+        </div>
+      </section>
+
+      <section class="course-projects section" id="projekte">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow"><span class="eyebrow__line"></span> ABSCHLUSSPROJEKTE</p><h2>Jetzt wird aus Wissen<br /><span class="heading-accent">etwas Eigenes.</span></h2></div>
+            <p class="section-heading__aside">Diese Projektideen kombinieren die Grundlagen aus mehreren Modulen.</p>
+          </div>
+          <div class="course-projects__grid">
+            <article class="course-project"><span>01 / DOM · EVENTS · SPEICHERN</span><h3>Deine Aufgabenliste</h3><p>Einträge hinzufügen, abhaken, entfernen und lokal behalten.</p><form class="project-form" id="todo-form"><label for="todo-input">Neue Aufgabe</label><div><input id="todo-input" maxlength="120" required placeholder="z. B. Arrays wiederholen" /><button class="button button--primary" type="submit">Hinzufügen</button></div></form><ul class="todo-list" id="todo-list" aria-live="polite"></ul></article>
+            <article class="course-project"><span>02 / ARRAYS · OBJEKTE · FILTER</span><h3>Notenübersicht</h3><p>Noten erfassen, den Durchschnitt berechnen und Einträge filtern.</p><form class="project-form" id="grade-form"><label for="student-name">Name</label><input id="student-name" maxlength="50" required placeholder="Vorname" /><label for="student-grade">Note (1–5)</label><div><input id="student-grade" type="number" min="1" max="5" step="1" required value="2" /><button class="button button--primary" type="submit">Speichern</button></div></form><label class="grade-filter" for="grade-filter">Liste filtern<input id="grade-filter" type="search" placeholder="Name suchen" /></label><p class="grade-average" id="grade-average" aria-live="polite">Noch keine Noten erfasst.</p><ul class="grade-list" id="grade-list"></ul></article>
+            <article class="course-project"><span>03 / FUNKTIONEN · BEDINGUNGEN</span><h3>JavaScript-Quiz</h3><p>Fragen beantworten, Punkte sammeln und den Lernstand direkt sehen.</p><div class="final-quiz" id="final-quiz"><p class="final-quiz__progress" id="quiz-progress">Frage 1 von 4</p><h4 id="quiz-question">Welche Variable kann neu zugewiesen werden?</h4><div class="final-quiz__answers" id="quiz-answers"></div><p id="final-quiz-feedback" aria-live="polite">Wähle die beste Antwort.</p><button class="button button--small button--dark" id="next-question" type="button" disabled>Weiter →</button></div></article>
+          </div>
+          <aside class="course-reference">
+            <div><strong>Arbeitsblätter & Zusatzthemen</strong><p>Die zehn Kapitel sind hier neu aufbereitet. Im Original findest du zusätzliche Arbeitsblätter, Aufgaben, VS-Code- und KI-Materialien sowie weitere Referenzen.</p></div>
+            <div class="course-reference__links"><a href="https://github.com/2BFITT/jstutorial/tree/main/uebungen" target="_blank" rel="noopener noreferrer">Übungen <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial/blob/main/uebungen/hinweise.html" target="_blank" rel="noopener noreferrer">Übungshinweise <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial/tree/main/arbeitsblaetter" target="_blank" rel="noopener noreferrer">Arbeitsblätter <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial/blob/main/vscode.html" target="_blank" rel="noopener noreferrer">VS Code <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial/blob/main/ki-grundlagen.html" target="_blank" rel="noopener noreferrer">KI-Grundlagen <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial/blob/main/bibliothek.html" target="_blank" rel="noopener noreferrer">Bibliothek <span aria-hidden="true">↗</span></a><a href="https://github.com/2BFITT/jstutorial" target="_blank" rel="noopener noreferrer">Originalprojekt <span aria-hidden="true">↗</span></a></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__top"><a class="brand brand--footer" href="./index.html#start"><span class="brand__mark" aria-hidden="true">&lt;JS&gt;</span><span class="brand__name">js<span>atelier</span></span></a><p>Ein guter Ort, um anzufangen.</p><a class="site-footer__top-link" href="#main-content">Zurück nach oben ↑</a></div>
+      <div class="container site-footer__bottom"><span>JS Atelier · JavaScript lernen</span><a href="https://github.com/2BFITT/jstutorial" target="_blank" rel="noopener noreferrer">Inspiration & weitere Materialien ↗</a></div>
+    </footer>
+  </body>
+</html>

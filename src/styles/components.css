@@ -602,6 +602,7 @@
 }
 
 .learning__footnote span { color: #7f8e5e; font-size: 1rem; }
+.learning__all-link { margin-top: 1.25rem; }
 
 .playground {
   overflow: hidden;
