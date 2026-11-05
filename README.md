@@ -2,6 +2,8 @@
 
 Its the js tutorial rewritten with itcss, Bem, Vite, Mobile first, Ux und UI
 
+nextpropmt : und nun füge alle tutorials und funktinoen von dem : https://github.com/2BFITT/jstutorial hinzu
+
 
 
 
