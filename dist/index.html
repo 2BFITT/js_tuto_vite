@@ -8,11 +8,12 @@
     <title>JS Atelier — JavaScript lernen, das wirklich klickt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-BN0oVMmV.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DGCqIWqj.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Manrope:wght@400..800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-SdRRM-PL.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BMGkMKRd.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
     <div class="announcement">
       <span class="announcement__dot" aria-hidden="true"></span>
       <p>Dein nächstes Skill-up startet hier <span aria-hidden="true">↗</span></p>
@@ -37,7 +38,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero section" id="start">
         <div class="container hero__layout">
           <div class="hero__content">
@@ -92,21 +93,69 @@
             <article class="learning-card learning-card--featured">
               <div class="learning-card__top"><span class="learning-card__number">01 / START</span><span class="learning-card__icon learning-card__icon--lavender" aria-hidden="true">✳</span></div>
               <div><h3>Die Basics, die sitzen</h3><p>Variablen, Datentypen und Bedingungen – verständlich erklärt und sofort ausprobiert.</p></div>
-              <a href="#spielwiese" class="learning-card__link" aria-label="Die JavaScript Basics ausprobieren">Lerninhalte ansehen <span aria-hidden="true">↗</span></a>
+              <a href="#grundlagen" class="learning-card__link">Lerninhalte ansehen <span aria-hidden="true">↗</span></a>
               <span class="learning-card__decor" aria-hidden="true">{ }</span>
             </article>
             <article class="learning-card">
               <div class="learning-card__top"><span class="learning-card__number">02 / MACHEN</span><span class="learning-card__icon learning-card__icon--yellow" aria-hidden="true">⌘</span></div>
               <div><h3>Code zum Anfassen</h3><p>Übungen und kleine Experimente bringen deine Ideen direkt zum Laufen.</p></div>
-              <a href="#spielwiese" class="learning-card__link" aria-label="Code Übungen entdecken">Ausprobieren <span aria-hidden="true">↗</span></a>
+              <a href="#spielwiese" class="learning-card__link">Übung starten <span aria-hidden="true">↗</span></a>
             </article>
             <article class="learning-card">
               <div class="learning-card__top"><span class="learning-card__number">03 / WACHSEN</span><span class="learning-card__icon learning-card__icon--mint" aria-hidden="true">↗</span></div>
               <div><h3>Dein erstes Projekt</h3><p>Verbinde die Grundlagen und baue etwas, das wirklich deins ist.</p></div>
-              <a href="#spielwiese" class="learning-card__link" aria-label="Mehr über Projekte erfahren">Mehr erfahren <span aria-hidden="true">↗</span></a>
+              <a href="#projekt-idee" class="learning-card__link">Projekt ansehen <span aria-hidden="true">↗</span></a>
             </article>
           </div>
           <div class="learning__footnote"><span aria-hidden="true">✳</span> Lernen soll sich gut anfühlen. Pausen sind Teil des Plans.</div>
+        </div>
+      </section>
+
+      <section class="lesson section" id="grundlagen" aria-labelledby="lesson-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow__line"></span> DEINE ERSTE MINI-LEKTION</p>
+              <h2 id="lesson-title">Drei Bausteine.<br /><span class="heading-accent">Ein klares Prinzip.</span></h2>
+            </div>
+            <p class="section-heading__aside">Code speichert Werte, trifft Entscheidungen und reagiert auf Aktionen. Damit beginnt fast jede Interaktion.</p>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card">
+              <span class="lesson-card__number">01</span>
+              <h3>Werte speichern</h3>
+              <p>Mit <code>const</code> legst du einen Wert fest, mit <code>let</code> einen veränderbaren.</p>
+              <pre><code><span class="syntax-purple">let</span> punkte = <span class="syntax-orange">0</span>;
+punkte = punkte + <span class="syntax-orange">1</span>;</code></pre>
+            </article>
+            <article class="lesson-card">
+              <span class="lesson-card__number">02</span>
+              <h3>Bedingungen prüfen</h3>
+              <p><code>if</code> führt Code nur aus, wenn eine Bedingung wahr ist.</p>
+              <pre><code><span class="syntax-pink">if</span> (punkte &gt; <span class="syntax-orange">0</span>) {
+  <span class="syntax-blue">console</span>.<span class="syntax-green">log</span>(<span class="syntax-yellow">"Los!"</span>);
+}</code></pre>
+            </article>
+            <article class="lesson-card">
+              <span class="lesson-card__number">03</span>
+              <h3>Auf Klicks reagieren</h3>
+              <p>Ein Event-Handler verbindet eine Aktion mit dem Code, der darauf antwortet.</p>
+              <pre><code>button.<span class="syntax-green">addEventListener</span>(
+  <span class="syntax-yellow">"click"</span>, updateCount
+);</code></pre>
+            </article>
+          </div>
+          <form class="lesson-quiz" id="lesson-quiz">
+            <fieldset>
+              <legend>Mini-Check: Welche Variable darf neu zugewiesen werden?</legend>
+              <div class="lesson-quiz__answers">
+                <button class="lesson-quiz__answer" type="button" data-answer="const" aria-pressed="false">const</button>
+                <button class="lesson-quiz__answer" type="button" data-answer="let" aria-pressed="false">let</button>
+                <button class="lesson-quiz__answer" type="button" data-answer="if" aria-pressed="false">if</button>
+              </div>
+            </fieldset>
+            <p class="lesson-quiz__feedback" id="quiz-feedback" aria-live="polite">Wähle eine Antwort – du kannst es beliebig oft versuchen.</p>
+          </form>
         </div>
       </section>
 
@@ -135,6 +184,22 @@
             </div>
             <div class="demo-card__footer"><span>Dein erster interaktiver Baustein.</span><span aria-hidden="true">✳</span></div>
           </div>
+        </div>
+      </section>
+
+      <section class="project section" id="projekt-idee" aria-labelledby="project-title">
+        <div class="container project__layout">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> DEIN ERSTES PROJEKT</p>
+            <h2 id="project-title">Mach den Zähler<br />zu <span class="heading-accent">deinem Projekt.</span></h2>
+            <p class="project__intro">Du hast die Bausteine gesehen. Jetzt kombiniere sie: Plane eine kleine Punkte-App und erweitere den Zähler Schritt für Schritt.</p>
+          </div>
+          <ol class="project-steps">
+            <li><span>01</span><div><strong>Wert festlegen</strong><p>Starte mit einer Variable für deine Punkte.</p></div></li>
+            <li><span>02</span><div><strong>Aktionen verbinden</strong><p>Nutze Plus- und Minus-Buttons, um den Wert zu ändern.</p></div></li>
+            <li><span>03</span><div><strong>Ergebnis zeigen</strong><p>Aktualisiere die Anzeige und probiere den Reset aus.</p></div></li>
+          </ol>
+          <a class="button button--primary project__button" href="#spielwiese">Am Zähler ausprobieren <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

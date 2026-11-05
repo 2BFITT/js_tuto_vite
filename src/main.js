@@ -10,12 +10,32 @@ navToggle?.addEventListener('click', () => {
   navigation?.classList.toggle('site-nav--open', !isExpanded);
 });
 
+function closeNavigation(returnFocus = false) {
+  navToggle?.setAttribute('aria-expanded', 'false');
+  navToggle?.setAttribute('aria-label', 'Menü öffnen');
+  navigation?.classList.remove('site-nav--open');
+  if (returnFocus) navToggle?.focus();
+}
+
 navigation?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navToggle?.setAttribute('aria-expanded', 'false');
-    navToggle?.setAttribute('aria-label', 'Menü öffnen');
-    navigation.classList.remove('site-nav--open');
-  });
+  link.addEventListener('click', () => closeNavigation());
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && navToggle?.getAttribute('aria-expanded') === 'true') {
+    closeNavigation(true);
+  }
+});
+
+document.addEventListener('click', (event) => {
+  const header = document.querySelector('.site-header');
+  if (
+    navToggle?.getAttribute('aria-expanded') === 'true' &&
+    event.target instanceof Node &&
+    header && !header.contains(event.target)
+  ) {
+    closeNavigation();
+  }
 });
 
 let count = 0;
@@ -44,4 +64,25 @@ document.querySelectorAll('[data-action]').forEach((button) => {
   });
 });
 
-document.querySelector('#current-year').textContent = String(new Date().getFullYear());
+const quizFeedback = document.querySelector('#quiz-feedback');
+document.querySelectorAll('[data-answer]').forEach((answerButton) => {
+  answerButton.addEventListener('click', () => {
+    const isCorrect = answerButton.dataset.answer === 'let';
+
+    document.querySelectorAll('[data-answer]').forEach((button) => {
+      button.setAttribute('aria-pressed', String(button === answerButton));
+      delete button.dataset.correct;
+    });
+
+    answerButton.dataset.correct = String(isCorrect);
+    if (quizFeedback) {
+      quizFeedback.dataset.state = isCorrect ? 'success' : 'error';
+      quizFeedback.textContent = isCorrect
+        ? 'Richtig! let darf einen neuen Wert erhalten.'
+        : 'Noch nicht ganz: Bei welcher Deklaration darf sich der Wert ändern?';
+    }
+  });
+});
+
+const currentYear = document.querySelector('#current-year');
+if (currentYear) currentYear.textContent = String(new Date().getFullYear());
