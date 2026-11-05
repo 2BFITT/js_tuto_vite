@@ -1,0 +1,32 @@
+.container {
+  width: min(calc(100% - 2.5rem), var(--content-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+  color: #62675f;
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.eyebrow__line {
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (min-width: 720px) {
+  .container {
+    width: min(calc(100% - 5rem), var(--content-width));
+  }
+}

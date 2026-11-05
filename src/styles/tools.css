@@ -1,0 +1,7 @@
+/* ITCSS tools layer: reusable fluid scales and visual tokens (no output selectors). */
+:root {
+  --text-small: clamp(0.78rem, 0.75rem + 0.12vw, 0.875rem);
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-heading: clamp(2.6rem, 8vw, 5.65rem);
+  --section-space: clamp(4.5rem, 9vw, 8rem);
+}
